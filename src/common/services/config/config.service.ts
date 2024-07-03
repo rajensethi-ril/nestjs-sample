@@ -49,6 +49,7 @@ export class ConfigService {
   constructor() {
     const config = dotenv.config().parsed;
     this.envConfig = this.validateInput(config);
+    // Logger.log('config set', config, this.envConfig);
   }
 
   /**
