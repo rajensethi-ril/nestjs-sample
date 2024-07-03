@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "module": "commonjs",                  // Use CommonJS module system
-    "declaration": false,                  // Disable declaration files
+    "declaration": true,                  // Disable declaration files
     "removeComments": true,                // Remove comments from output
     "noEmitOnError": true,                 // Prevent emission if there are errors
     "strict": true,                        // Enable all strict type-checking options
