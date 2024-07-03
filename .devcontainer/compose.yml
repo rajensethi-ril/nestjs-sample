@@ -1,0 +1,43 @@
+services:  
+  # Services  
+  mongo:
+    image: bitnami/mongodb:latest
+    environment:
+      - "MONGODB_ROOT_PASSWORD=root"
+      - "MONGODB_DATABASE=app-db"
+      - "MONGODB_USERNAME=app-user"
+      - "MONGODB_PASSWORD=admin"
+    volumes:
+      - mongodb-vol:/bitnami/mongodb
+    # ports:
+    #   - 27017:27017
+
+  mongo-configuration:
+    image: bitnami/mongodb:latest
+    user: root
+    volumes:
+      - mongodb-vol:/bitnami
+    command:
+      - bash
+      - -c
+      - >
+        chown -R 1001:1001 /bitnami;
+        sleep 10;
+        mongosh test_app-db \
+          --host mongo \
+          --port 27017 \
+          --username root \
+          --password root \
+          --authenticationDatabase admin \
+          --eval "db.createUser({user: 'app-user', pwd: 'admin', roles:[{role:'dbOwner', db: 'test_app-db'}]});"
+
+  development:
+    environment:
+      - SHELL=/bin/bash
+    build: .
+    volumes:
+      - ..:/workspace
+    working_dir: /workspace
+
+volumes:
+  mongodb-vol:

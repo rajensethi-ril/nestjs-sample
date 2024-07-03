@@ -1,0 +1,28 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",                  // Use CommonJS module system
+    "declaration": false,                  // Disable declaration files
+    "removeComments": true,                // Remove comments from output
+    "noEmitOnError": true,                 // Prevent emission if there are errors
+    "strict": true,                        // Enable all strict type-checking options
+    "strictNullChecks": true,              // Enable strict null checks
+    "noImplicitAny": true,                 // Disallow implicit any types
+    "noImplicitThis": true,                // Disallow implicit 'this' types
+    "alwaysStrict": true,                  // Parse in strict mode and emit "use strict" for each source file
+    "strictBindCallApply": true,           // Ensure 'call', 'bind', and 'apply' methods are called with correct arguments
+    "strictFunctionTypes": true,           // Ensure function parameters and return types are correctly specified
+    "noUnusedLocals": true,                // Report errors on unused locals
+    "noUnusedParameters": true,            // Report errors on unused parameters
+    "noFallthroughCasesInSwitch": true,    // Report errors for fallthrough cases in switch statements
+    "moduleResolution": "node",            // Use Node module resolution strategy
+    "esModuleInterop": true,               // Enables emit interoperability between CommonJS and ES Modules
+    "skipLibCheck": true,                  // Skip type checking of all declaration files
+    "target": "ES2021",                    // Specify ECMAScript target version
+    "lib": ["ES2021", "dom"],              // Specify library files to be included in the compilation
+    "outDir": "./dist",                    // Redirect output structure to the dist directory
+    "sourceMap": false,                    // Disable source maps for production
+    "incremental": true                    // Enable incremental compilation
+  },
+  "include": ["src/**/*.ts"],
+  "exclude": ["node_modules", "dist"]
+}
