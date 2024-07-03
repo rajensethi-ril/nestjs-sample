@@ -2,7 +2,6 @@ import { Logger } from '@nestjs/common';
 import mongoose from 'mongoose';
 import { defer, lastValueFrom, Observable } from 'rxjs';
 import { delay, retry, scan } from 'rxjs/operators';
-
 import {
   ConfigService,
   DB_HOST,
@@ -14,9 +13,6 @@ import {
 } from './services/config/config.service';
 
 export const MONGOOSE_CONNECTION = 'DATABASE_CONNECTION';
-export const RATE_LIMIT_CONNECTION = 'RATE_LIMIT_CONNECTION';
-export const RATE_LIMIT_COLLECTION = 'rate_limit';
-export const SESSION_CONNECTION = 'SESSION_CONNECTION';
 
 export const DatabaseProviders = [
   {

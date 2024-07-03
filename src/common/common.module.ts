@@ -4,7 +4,7 @@ import { DatabaseProviders } from './database.provider';
 
 @Global()
 @Module({
-    providers:[ ...CommonProviders, ...DatabaseProviders ],
-    exports:[ ...CommonProviders, ...DatabaseProviders ],
+  providers: [...CommonProviders, ...DatabaseProviders],
+  exports: [...CommonProviders, ...DatabaseProviders],
 })
 export class CommonModule {}
