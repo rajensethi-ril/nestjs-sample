@@ -1,11 +1,11 @@
 {
   "compilerOptions": {
     "module": "commonjs",                  // Use CommonJS module system
-    "declaration": false,                  // Disable declaration files
+    "declaration": true,                  // Disable declaration files
     "removeComments": true,                // Remove comments from output
     "noEmitOnError": true,                 // Prevent emission if there are errors
     "strict": true,                        // Enable all strict type-checking options
-    "strictNullChecks": true,              // Enable strict null checks
+    "strictNullChecks": false,              // Enable strict null checks
     "noImplicitAny": true,                 // Disallow implicit any types
     "noImplicitThis": true,                // Disallow implicit 'this' types
     "alwaysStrict": true,                  // Parse in strict mode and emit "use strict" for each source file
@@ -21,7 +21,10 @@
     "lib": ["ES2021", "dom"],              // Specify library files to be included in the compilation
     "outDir": "./dist",                    // Redirect output structure to the dist directory
     "sourceMap": false,                    // Disable source maps for production
-    "incremental": true                    // Enable incremental compilation
+    "incremental": true,                   // Enable incremental compilation
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+
   },
   "include": ["src/**/*.ts"],
   "exclude": ["node_modules", "dist"]
